@@ -13,7 +13,7 @@ export default function About() {
           <p className="text-sm leading-relaxed text-slate-600">
             Autism and other forms of neurodivergence are being diagnosed more and more every year, but support
             hasn’t kept up. Care is expensive, and most tools are built for clinics and caregivers, not for the
-            student. During my internship at a Bay Area health-tech company working on therapy for neurodivergent
+            student. During my internship at Sirica Therapeutics, a Bay Area health-tech company working on therapy for neurodivergent
             kids, I saw that gap firsthand. I built Steady so students can understand their own brains: notice when
             they’re overloaded, find the setting and block length that help them focus, and have that information
             for themselves. I also want it to build awareness that neurodivergent students don’t need fixing, they
