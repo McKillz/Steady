@@ -33,6 +33,10 @@ Steady was inspired by my internship at Sirica Therapeutics, where I saw that mo
 
 **AI tools used:** Base44 (AI app builder) generated the initial code from my prompts. Claude helped fix a timer bug and convert the app to standalone React.
 
+## Feedback and what's next
+
+I had friends test Steady. One suggested adding more sound and visual rewards (colors, confetti) to work as a reward system, plus an avatar to help guide students through the app. Next I plan to add these as optional settings, since some neurodivergent students are sensitive to sound and motion.
+
 ## Tech stack
 
 React, Vite, Tailwind CSS, Recharts, Radix UI components, localStorage.
