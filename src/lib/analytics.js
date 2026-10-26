@@ -28,12 +28,13 @@ export function shortDate(value) {
   return `${Number(m)}/${Number(d)}`;
 }
 
-const ENV_LABELS = { quiet_room: 'Quiet room', classroom: 'Classroom', library: 'Library', home: 'Home', other: 'Other' };
+const ENV_LABELS = { quiet_room: 'Quiet room', classroom: 'Classroom', library: 'Library', home: 'Home', outside: 'Outside', other: 'Other' };
 const ENV_PHRASING = {
   quiet_room: 'in a quiet room',
   classroom: 'in the classroom',
   library: 'in the library',
   home: 'at home',
+  outside: 'outside',
   other: 'in other settings',
 };
 
