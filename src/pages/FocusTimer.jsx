@@ -29,6 +29,7 @@ const ENVIRONMENTS = [
   { value: 'classroom', label: 'Classroom' },
   { value: 'library', label: 'Library' },
   { value: 'home', label: 'Home' },
+  { value: 'outside', label: 'Outside' },
   { value: 'other', label: 'Other' },
 ];
 
@@ -195,7 +196,9 @@ export default function FocusTimer() {
         environment,
         notes: notes.trim(),
       });
-      toast({ title: 'Focus session saved' });
+      toast({
+        title: rating >= 8 ? 'Locked in! Nice work.' : rating >= 5 ? 'Solid session. Saved.' : 'Tough one. Still counts.',
+      });
       setPhase('setup');
       setSecondsLeft(0);
       setFocusEndsAt(null);
