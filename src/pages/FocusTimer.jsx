@@ -34,6 +34,13 @@ const ENVIRONMENTS = [
 
 const BLOCKS = [5, 10, 20, 30];
 const BREAK_SECONDS = 120;
+const BREAK_TIPS = [
+  'Look away from the screen. Breathe slowly.',
+  'Get a glass of water.',
+  'Stand up and stretch your arms over your head.',
+  'Look at something far away for 20 seconds.',
+  'Close your eyes and count five slow breaths.',
+];
 const APP_TITLE = 'Steady';
 const STORAGE_KEY = 'steady.focusTimer.v1';
 
@@ -58,6 +65,7 @@ export default function FocusTimer() {
   // A timer left running when the student switches pages or refreshes the app.
   const [saved] = useState(loadSaved);
 
+  const [tip, setTip] = useState(BREAK_TIPS[0]);
   const [phase, setPhase] = useState(saved?.phase === 'focus' || saved?.phase === 'break' ? saved.phase : 'setup');
   const [taskLabel, setTaskLabel] = useState(saved?.taskLabel ?? '');
   const [environment, setEnvironment] = useState(saved?.environment ?? 'quiet_room');
@@ -125,6 +133,7 @@ export default function FocusTimer() {
 
   const takeBreak = () => {
     pauseFocus();
+    setTip(BREAK_TIPS[Math.floor(Math.random() * BREAK_TIPS.length)]);
     setBreaksTaken((b) => b + 1);
     setBreakLeft(BREAK_SECONDS);
     setBreakEndsAt(Date.now() + BREAK_SECONDS * 1000);
@@ -395,7 +404,7 @@ export default function FocusTimer() {
 
               {phase === 'break' && (
                 <p className="mx-auto mt-5 max-w-xs text-center text-sm text-slate-600">
-                  Look away from the screen. Breathe slowly.
+                  {tip}
                 </p>
               )}
 
