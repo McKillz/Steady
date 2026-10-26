@@ -50,7 +50,7 @@ export function ParticipantProvider({ children }) {
         if (parts.length === 0) {
           setSeeding(true);
           await db.Participant.create({
-            name: 'Alex Morgan',
+            name: 'Jordan Rivera',
             age: 16,
             is_demo: true,
             sensory_considerations: 'Loud, busy rooms drain me. Headphones and a quiet corner help me settle.',
