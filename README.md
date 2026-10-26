@@ -4,6 +4,10 @@
 
 Steady is a self check-in and focus app for neurodivergent high school students (ADHD, autism, sensory processing differences). Built by Sean Bandrapalli (Burlingame, CA) for the 2026 Congressional App Challenge.
 
+## Why I built it
+
+Autism and other forms of neurodivergence are being diagnosed more every year, but support hasn't kept up. Care is expensive, and most tools are built for clinics and caregivers, not for the student. During my internship at Sirica Therapeutics, a Bay Area health-tech company working on therapy for neurodivergent kids, I saw that gap firsthand. I built Steady so students can understand their own brains: notice when they're overloaded, find the setting and block length that help them focus, and have that information for themselves. I also want it to build awareness that neurodivergent students don't need fixing, they need tools that fit how they work.
+
 ## What it does
 
 - **Daily Check-In.** Six quick sliders in under 30 seconds: sleep, mood, energy, how overwhelmed you feel, how you're handling noise, light and crowds, and how ready you are to focus.
@@ -19,30 +23,4 @@ Steady opens with a demo student so you can see how it works. Go to **Settings â
 
 ## Technical challenge
 
-Students start a focus block and then switch tabs to do their work. Browsers throttle timers in background tabs, so a countdown that subtracts one second per tick falls behind. The timer now stores the block's end timestamp and calculates the remaining time from `Date.now()`, so it stays accurate in the background. It also saves its state to localStorage so it survives page changes and refreshes, and it sends a chime and browser notification when a block or break ends.
-
-## How it was built (AI disclosure)
-
-- I designed the app: the problem, the audience, the features and the flow.
-- The first version was generated with **Base44**, an AI app builder, from prompts I wrote.
-- I used **Claude** (AI) to help review the code, fix the background-tab timer issue, and convert the app into a standalone React app with on-device storage instead of Base44's backend.
-- By hand, I: [list what you changed yourself, e.g. the About page text, focus block lengths]
-
-## Tech stack
-
-React, Vite, Tailwind CSS, Recharts, Radix UI components, localStorage.
-
-## Run it locally
-
-```bash
-npm install
-npm run dev
-```
-
-Then open the URL it prints (usually http://localhost:5173).
-
-## Deploy
-
-Works on Vercel or Netlify with no setup: build command `npm run build`, output folder `dist`.
-
-*Steady is a student prototype, not medical advice.*
+Students start a focus block and then switch tabs to do their work. Browsers throttle timers in background tabs, so a countdown that subtracts one second
